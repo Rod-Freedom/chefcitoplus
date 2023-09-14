@@ -14,8 +14,9 @@ const PORT = process.env.PORT || 3001;
 
 const cookie_sess = {
   secret: "Secret chef", //secret message
+
+  //cookie
   cookie: {
-    //cookie
     maxAge: 1800000,
     httpOnly: true,
     secure: false,
