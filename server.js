@@ -7,7 +7,7 @@ const routes = require("./controllers"); //routes
 const sequelize = require("./config/connection"); //db connection
 const SequelizeStore = require("connect-session-sequelize")(session.Store); //store session
 
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ defaultLayout: "main" });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -40,7 +40,7 @@ app.set("view engine", "handlebars");
 //url encoding
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "src"))); //adding to the path the folder src
+app.use(express.static(path.join(__dirname, "dist"))); //adding to the path the folder dist
 
 //Using controllers as route
 app.use(routes);
